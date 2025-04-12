@@ -1,28 +1,30 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import WalletConnect from "./components/WalletConnect";
-import ClaimSubmit from "./components/ClaimSubmit";
-import ClaimVerification from "./components/ClaimVerification";
-import ClaimHistory from "./components/ClaimHistory";
-import ReportForm from "./components/ReportForm";
-import "./i18n"; // Import i18n config
-import "./App.css";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Landing from './pages/Landing'; 
+import Dashboard from './components/Dashboard';
+import ConnectWallet from './pages/ConnectWallet';
+import ConnectWallet2 from './pages/ConnectWallet2';
+import ClaimHistory from './components/ClaimHistory';
+import ReportPage from './components/ReportPage';
+
+import QuickTool from './pages/QuickTool';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="App">
-        <WalletConnect />
-        <Switch>
-          <Route exact path="/submit-claim" component={ClaimSubmit} />
-          <Route exact path="/verify-claim" component={ClaimVerification} />
-          <Route exact path="/claim-history" component={ClaimHistory} />
-          <Route exact path="/record-report" component={ReportForm} />
-        </Switch>
-      </div>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/connect-wallet" element={<ConnectWallet />} />
+        <Route path="/connect-wallet2" element={<ConnectWallet2 />} />
+        <Route path="/claims" element={<ClaimHistory />} />
+        <Route path="/report" element={<ReportPage />} />
+        {/* <Route path="/claim" element={<Claim />} />
+        <Route path="/history" element={<History />} /> */}
+        <Route path="/quick-tool" element={<QuickTool />} />
+      </Routes>
     </Router>
   );
-};
+}
 
 export default App;

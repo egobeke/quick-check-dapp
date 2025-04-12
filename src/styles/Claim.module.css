@@ -1,0 +1,49 @@
+.claimPage {
+    padding: 40px 20px;
+    min-height: 100vh;
+    background: #061830;
+    color: white;
+    text-align: center;
+  }
+  
+  .address {
+    color: #00ffc8;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    resize: vertical;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .button {
+    padding: 14px 28px;
+    background-color: #0066ff;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #004fcc;
+  }
+  
+  .success {
+    margin-top: 20px;
+    color: #00ffc8;
+  }
+  

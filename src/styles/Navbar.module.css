@@ -43,4 +43,14 @@
   .walletButton:hover {
     background-color: #f2f2f2;
   }
+
+
+  .walletAddress {
+    padding: 12px 20px;
+    background-color: #00c2a8;
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  
   
