@@ -1,3 +1,4 @@
+// src/context/WalletProvider.tsx
 import React, { useState, useEffect } from 'react';
 import { WalletContext } from './WalletContext';
 

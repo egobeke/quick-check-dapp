@@ -1,7 +1,7 @@
-// WalletContext.ts
+// src/context/WalletContext.ts
 import { createContext } from 'react';
 
-interface WalletContextType {
+export interface WalletContextType {
   address: string | null;
   connectWallet: () => Promise<void>;
 }

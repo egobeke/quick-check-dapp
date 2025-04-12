@@ -1,8 +1,9 @@
 // src/components/Dashboard.tsx
 import React from 'react';
-import { useWallet } from '../context/WalletContext';
+import { useWallet } from '../hooks/useWallet';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Dashboard.module.css';
+
 
 const Dashboard: React.FC = () => {
   const { address } = useWallet();
