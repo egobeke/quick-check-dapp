@@ -1,23 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/ConnectWallet.module.css';
-import { ethers } from 'ethers';
+import { useWallet } from '../context/WalletContext';
 
 const ConnectWallet: React.FC = () => {
-  const [walletAddress, setWalletAddress] = useState<string | null>(null);
-
-  const connectWallet = async () => {
-    if ((window as any).ethereum) {
-      try {
-        const provider = new ethers.BrowserProvider((window as any).ethereum);
-        const accounts = await provider.send('eth_requestAccounts', []);
-        setWalletAddress(accounts[0]);
-      } catch (error) {
-        console.error('Connection error:', error);
-      }
-    } else {
-      alert('MetaMask not found. Please install it.');
-    }
-  };
+  const { address, connectWallet } = useWallet();
 
   return (
     <div className={styles.wrapper}>
@@ -27,8 +13,8 @@ const ConnectWallet: React.FC = () => {
         <button onClick={connectWallet} className={styles.button}>
           🦊 Connect with MetaMask
         </button>
-        {walletAddress && (
-          <p className={styles.address}>Connected: {walletAddress}</p>
+        {address && (
+          <p className={styles.address}>Connected: {address}</p>
         )}
       </div>
     </div>
